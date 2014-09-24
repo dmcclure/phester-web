@@ -4,8 +4,10 @@ $(document).ready(function () {
   var questionIds = [];
   var questionEditors = [];
 
-  // Show a random wavatar
-  $('#avatar').attr('src', 'http://www.gravatar.com/avatar/' + CryptoJS.MD5(Math.random().toString()) + '?d=wavatar');
+  // Show the username and a random wavatar
+  var username = $.cookie('phester_username');
+  $('#username').text(username);
+  $('#avatar').attr('src', 'http://www.gravatar.com/avatar/' + CryptoJS.MD5(username) + '?d=wavatar');
 
   // Fetch the questions from the server
   showLoader('Loading questions');
